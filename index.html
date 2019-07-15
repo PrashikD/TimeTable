@@ -11,12 +11,11 @@
     <br><br><br>
     <div class="container-fluid">
     <img class="img-responsive" src="Latest_TimeTableRotated.png" style="width: 100%">
-    </div>
-    
+    </div>   
     
    
 <script>
-    var x = window.matchMedia("(max-width:650px)");
+    
     function ImageChange(x) {
         if(x.matches){
             document.getElementById("main").src = "Latest_TimeTableRotated.png";
@@ -25,6 +24,14 @@
             document.getElementById("main").src = "Latest_TimeTable.png";
         }
     }
+  var x = window.matchMedia("(max-width:650px)");
+    ImageChange(x);
+    
+    while(1){
+ if (window.matchMedia("(orientation: landscape)").matches) {
+   alert("Please rotate the device and use in Portrait Mode !");
+        }
+ }
     
 </script>  
     
