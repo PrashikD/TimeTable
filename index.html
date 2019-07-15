@@ -7,12 +7,25 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </head>
 <body>
+    <br><br><br>
     <div class="container-fluid">
     <img class="img-responsive" src="Latest_TimeTableRotated.png" style="width: 100%">
     </div>
     
     
-    <script src="dynamic.js"></script>
+   
+    <script>
+    var x = window.matchMedia("(max-width:650px)");
+    function ImageChange(x) {
+        if(x.matches){
+            document.getElementById("main").src = "Latest_TimeTableRotated.png"
+        }
+        else{
+            document.getElementById("main").src = "Latest_TimeTable.png"
+        }
+    }
+    
+</script>  
     
     
     
