@@ -15,24 +15,31 @@
     
    
 <script>
-    
-    function ImageChange(x) {
-        if(x.matches){
-            document.getElementById("main").src = "Latest_TimeTableRotated.png";
+        function ImageChange(x) {
+            if(x.matches){
+                document.getElementById("main").src = "Latest_TimeTableRotated.png";
         }
-        else{
-            document.getElementById("main").src = "Latest_TimeTable.png";
+            else{
+                document.getElementById("main").src = "Latest_TimeTable.png";
         }
     }
-  var x = window.matchMedia("(max-width:650px)");
-    ImageChange(x);
+  
     
-    while(1){
- if (window.matchMedia("(orientation: landscape)").matches) {
-   alert("Please rotate the device and use in Portrait Mode !");
+    function checkOrientation(x, y) {
+        if(x.matches){
+            if(y.matches){ }
+            else{
+               alert("Perhaps your Auto-Rotate Mode is on. Please use the Portrait Mode !");
+            }
         }
- }
+        
+    }
     
+  var x = window.matchMedia("(max-width:650px)");
+var y = window.matchMedia("(orientation:portrait)");  
+    
+ ImageChange(x);
+checkOrientation(x,y);    
 </script>  
     
     
