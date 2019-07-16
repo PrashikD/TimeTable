@@ -10,36 +10,26 @@
 <body>
     <br>
     <div class="container-fluid">
-    <img class="img-responsive" src="Latest_TimeTableRotated.png" style="width: 100%">
+    <img id="mobile" class="img-responsive" src="Latest_TimeTableRotated.png" style="width: 100%; display: none;">
+     <img id="comp" class="img-responsive" src="Latest_TimeTable.png" style="width: 100% display:none; ">
     </div>   
     
    
 <script>
+   
+    var x = window.matchMedia("(max-width:650px)");
+    
         function ImageChange(x) {
             if(x.matches){
-                document.getElementById("main").src = "Latest_TimeTableRotated.png";
+                document.getElementById("comp").style.display = "none";
         }
             else{
-                document.getElementById("main").src = "Latest_TimeTable.png";
+                document.getElementById("mobile").style.display = "none";
         }
     }
   
+ ImageChange(x);  
     
-    function checkOrientation(x, y) {
-        if(x.matches){
-            if(y.matches){ }
-            else{
-               alert("Perhaps your Auto-Rotate Mode is on. Please use the Portrait Mode !");
-            }
-        }
-        
-    }
-    
-  var x = window.matchMedia("(max-width:650px)");
-var y = window.matchMedia("(orientation:portrait)");  
-    
- ImageChange(x);
-checkOrientation(x,y);    
 </script>  
     
     
