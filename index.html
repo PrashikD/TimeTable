@@ -7,16 +7,26 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-<body>
+<body onload="ImageChange()">
     <br>
     <div class="container-fluid">
     <img id="mobile" class="img-responsive" src="Latest_TimeTableRotated.png" style="width: 100%; display: block;">
-     <img id="comp" class="img-responsive" src="Latest_TimeTable.png" style="width: 100% display:none; ">
+     <img id="comp" class="img-responsive" src="Latest_TimeTable.png" style="width: 100%; display:none; ">
     </div>   
     
    
 <script>
-    
+      function ImageChange() {
+                
+            if(window.matchMedia("(max-width:650px)").matches) {
+                document.getElementById("comp").style.display = "block";
+                document.getElementById("mobile").style.display = "none";
+        }
+            else{
+                document.getElementById("comp").style.display = "none";
+                document.getElementById("mobile").style.display = "block";
+        }
+    }
 </script>  
     
     
