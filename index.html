@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <title>TimeTable</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="p.jpg">
+    <style>
+        body{
+            overflow: hidden;
+        }
+        div{
+            margin-top: -43px;
+        }
+        img#mobile{
+            display: block;
+            width: 100%;
+            height: 99%;
+            margin-top: 50px;
+        }
+        img#comp{
+            width: 100%;
+            height: 99%;
+            display: none;
+            transform: scaleY(0.91);
+        }
+    </style>
+</head>
+
+<body onload="ImageChange()">
+    <div>
+        <img id="mobile" src="Latest_TimeTableRotated.png">
+        <img id="comp" src="Latest_TimeTable.png">
+    </div>
+    <br>
+
+
+    <script>
+        function ImageChange() {
+
+            if (window.matchMedia("(max-width:768px)").matches) {
+                document.getElementById("comp").style.display = "none";
+                document.getElementById("mobile").style.display = "block";
+            }
+            else {
+                document.getElementById("comp").style.display = "block";
+                document.getElementById("mobile").style.display = "none";
+            }
+        }
+        document.getElementsByTagName('img')[0].onclick = function(){ window.location = "timetable_simplified.html";}
+        document.getElementsByTagName('img')[1].onclick = function () { window.location = "timetable_simplified.html"; }
+    </script>
+
+
+
+</body>
+
+</html>
